@@ -11,34 +11,35 @@ describe('OrangeTree', () => {
 
   describe('age', () => {
     test('has an age', () => {
-
+      expect(tree.age).toBe(age)
     });
   });
 
   describe('height', () => {
     test('has a height', () => {
-
+      expect(tree.height).toBe(height)
     });
   });
 
   // Убери 'x' из `xdescribe`, чтобы включить эти тесты.
-  xdescribe('passGrowingSeason', () => {
+  describe('passGrowingSeason', () => {
     test('should change the tree age', () => {
-
+      expect(tree.age).toBe(age + 1)
     });
 
     test('should make the tree grow', () => {
       // This should be more explicit. How much should the tree grow?
+      expect(tree.height).toBe(25)
     });
 
     // If the tree is old enough to bear fruit
     test('should cause the tree to produce oranges', () => {
-
+      expect(tree.age).toBe(6)
     });
 
   });
 
-  xdescribe('isMature', () => {
+  describe('isMature', () => {
     test('returns true if tree is old enough to bear fruit', () => {
 
     });
@@ -48,7 +49,7 @@ describe('OrangeTree', () => {
     });
   });
 
-  xdescribe('isDead', () => {
+  describe('isDead', () => {
     test('should return false for an alive tree', () => {
 
     });
@@ -58,7 +59,7 @@ describe('OrangeTree', () => {
     });
   });
 
-  xdescribe('hasOranges', () => {
+  describe('hasOranges', () => {
     test('should return true if oranges are on the tree', () => {
 
     });
@@ -68,7 +69,7 @@ describe('OrangeTree', () => {
     });
   });
 
-  xdescribe('pickAnOrange', () => {
+  describe('pickAnOrange', () => {
     test('should return an orange from the tree', () => {
 
     });
