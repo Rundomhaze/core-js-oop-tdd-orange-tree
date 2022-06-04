@@ -10,4 +10,6 @@ class Orange {
   }
 }
 
-module.exports = Orange;
+try {
+  module.exports = Orange;
+} catch {}
