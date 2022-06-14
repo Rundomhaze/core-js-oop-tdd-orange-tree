@@ -1,58 +1,53 @@
-try{
-  const Orange = require("./orange");
-  } catch {}
+// const Orange = require("./orange");
 
 class OrangeTree {
   constructor(age = 0, height = 0) {
     this.age = age;
     this.height = height;
     this.oranges = [];
-  }
+  };
 
   passGrowingSeason() {
-    this.age += 1;
-
-    if (this.height < 25) {
-      this.height += 2.5
-    } else {
-      this.height
+    this.age += 1
+    if (this.height <= 22.5) {
+      this.height += 2.5;
     };
 
-    if(this.isMature() && !this.isDead()) {
-      let count = Math.floor(100 + Math.random() * 300);
-      while(count > 0) {
-        this.oranges.push(new Orange());
-        count--;
+    if (this.isMature() && !this.isDead()) {
+      let countOranges = Math.floor(100 + Math.random() * (201))
+      for (let i = 0; i <= countOranges; i++){
+        let newOrange = new Orange()
+        this.oranges.push(newOrange)
       };
-    };
+    }
   };
 
   isMature() {
     //  Returns true if the tree is old enough to bear fruit, false otherwise
-    return this.age > 5;
-  }
+    return this.age > 5 ? true : false;
+  };
 
   isDead() {
-    return this.age >= 100
-  }
+    return this.age > 99 ? true : false;  
+  };
 
   hasOranges() {
     //  Returns true if there are any oranges on the tree, false otherwise
-    return !!this.oranges.length;
+    if(this.oranges.length > 0) return true
+    return false
   }
 
   pickAnOrange() {
     //  Returns an Orange if there are any
     //  Raises a NoOrangesError otherwise
     if (!this.hasOranges()) {
-      return 'This tree has no oranges';
+      throw Error('This tree has no oranges');
     } else {
-      return this.oranges.pop();
+      return this.oranges.pop()
     }
     //  orange-picking logic goes here
   }
 }
 
-try {
-  module.exports = OrangeTree;
-} catch{}
+
+// module.exports = OrangeTree;
